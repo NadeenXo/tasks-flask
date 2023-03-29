@@ -10,6 +10,9 @@
 <!-- <h1>Template</h1> -->
 <div class="content">
     <h1 style="text-align: center;">Task Master</h1>
+    {%if tasks|length < 1%}
+    <h4 style="text-align: center;">no tasks. create one!</h4>
+    {%else%}
     <table>
         <tr>
             <th>Task</th>
@@ -30,6 +33,7 @@
         </tr>
         {% endfor %}
     </table>
+    {%endif%}
     <br>
 
     <form action="/" method="POST">
